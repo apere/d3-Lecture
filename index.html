@@ -7,15 +7,17 @@
 	<script src="libs/d3.chart.min.js" type="text/javascript"></script>
 	<script src="libs/moment.js" type="text/javascript"></script>
 	<!-- Custom JS -->
-	<script src="js/bubble_timeline_init.js" type="text/javascript"></script> <!-- Bubble Timeline -->
+	<script src="js/bubble_timeline_chart.js" type="text/javascript"></script><!-- Bubble Timeline -->
 	<script src="js/standard-bar-chart.js" type="text/javascript"></script><!-- Standard Bar Chart --> 
 	<!-- Stylesheets -->
 	<link rel="stylesheet" href="css/stylesheet.css">
 </head>
 
 <body>
+	<h1>D3 & Resusable Chart Examples</h1>	
+	
 	<div class = "bubble-wrapper" id = "bubble-wrapper">
-		<h1>Bubble Timeline</h1>
+		<h2><a href = "timeline.html">1. Bubble Timeline</a></h2>
 		<div class = "bubble-container">
 			<div class="time-buttons btn-group btn-group-sm">
 				<button id="six-months" type="button" class="btn btn-default">Last 6 Months</button>
@@ -34,7 +36,7 @@
 	</div>
 	
 	<div class = "bar-wrapper" id = "bar-wrapper">
-		<h1>Bar Charts</h1>
+		<h2><a href = "bar-charts.html">2. Bar Charts</a></h2>
 		<h3>Calories in Popular Breakfast Meals</h3>
 		<div id = "bar-container-1">
 			<div class = "chart-legend">
@@ -47,11 +49,48 @@
 		</div>
 	</div>
 	
+	<div class = "world-cup-container">
+		<h2>3. <a href = "http://code.goinvo.com/soccer/">World Cup History</a></h2>
+		<iframe src = "http://code.goinvo.com/soccer/" width = "900px", height = "700px"></iframe>
+	</div>
+	
+
+	<div class = "more-examples">
+		<h3>For more examples of straight up d3.js, check out <a class = "gray" href = "https://github.com/mbostock/d3/wiki/Gallery">Mike Bostok's Github Page here</a> or checkout a small list that I've made below.</h3>
+		<ul>
+			<li>
+				<a href = "http://mbostock.github.io/d3/talk/20111018/collision.html">Collision Detection</a>
+			</li>
+			<li>
+				<a href = "http://color.method.ac/">Color Game</a>
+			</li>
+			<li>
+				<a href = "http://bl.ocks.org/clayzermk1/9142407">Space Time</a>
+			</li>
+			<li>
+				<a href = "http://bl.ocks.org/mbostock/4165404">Rainbow Worm</a>
+			</li>
+			<li>
+				<a href = "http://square.github.io/cubism/">Cubism.js - Time Series Visualization</a>
+			</li>
+			<li>
+				<a href = "http://dan.iel.fm/xkcd/">XKCD Style plots with JS</a>
+			</li>
+			<li>
+				<a href = "http://visualizing.org/full-screen/56588">OECD's Better Life Index</a>
+			</li>
+			<li>
+				<a href = "http://bl.ocks.org/christophermanning/4315896">Simplex Noise Dots</a>
+			</li>
+		</ul>
+	</div>
+	<h3>For more information how to d3 works and how to use it, check out <a class = "gray" href = "http://alignedleft.com/tutorials/d3">this free digital O'Reilly Book.</a></h3>
+	<h3>For more examples of resuable d3 charts, check out <a class = "gray" href ="http://misoproject.com/d3-chart/">The Miso Project's Page</a> (it tends to be down a lot).</h3>
 </body>
 
 
 <footer>
-	<script src="js/bubble_timeline_chart.js" type="text/javascript"></script>
+	<script src="js/bubble_timeline_init.js" type="text/javascript"></script>
 	<script src="js/standard-bar-init.js" type="text/javascript"></script>
 </footer>
 

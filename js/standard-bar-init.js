@@ -39,9 +39,8 @@ var margin = {
     'left': 10,
     'bottom': 20
 };
-var color = "#db524b";
-var numc = 5;
 
+//Drawing my Dinner Bar Chart
 var chart1 = d3.select("#bar-container-1")
   .append("svg").attr('class', 'bar-chart').attr('display', 'inline-block')
   .chart("StandardBar", {
@@ -50,10 +49,8 @@ var chart1 = d3.select("#bar-container-1")
     width: width,
     height: height,
     colors: ["#e89795", "#9b9b9b", "#d8d8d8", "#f5f5f5"],
-    numCategories: 4,
     rowSpacing: 3,
     extraSpacing: 6,
-    ignoreCategory: { "OK" : true  },
 	suggestedMax: 300,
     margin: {
       'top': 0,
@@ -73,10 +70,8 @@ var chart3 = d3.select("#bar-container-3")
     width: width,
     height: height,
     colors: ["#e89795", "#9b9b9b", "#d8d8d8", "#f5f5f5"],
-    numCategories: 4,
     rowSpacing: 3,
     extraSpacing: 6,
-    ignoreCategory: { "OK" : true  },
 	suggestedMax: 350,
     margin: {
       'top': 0,
@@ -91,13 +86,15 @@ var barClicked = function(e, eventData) {
     console.log(eventData);
 };
 
+
+// Example showing that I can create my own event & bind a function to it.
 $(chart1).on('chartElementClicked', function(e, eventData) {console.log("chart Clicked")});
-$(chart2).on('chartElementClicked', function(e, eventData) {console.log("chart Clicked")});
 $(chart3).on('chartElementClicked', function(e, eventData) {console.log("chart Clicked")});
 
 
+// Updating the width of my charts to the new width of its container
 $(window).resize(function () {
-        width = $('.bar-wrapper').width();
-        chart1.width(width);
-        chart3.width(width);
-    });
+	width = $('.bar-wrapper').width();
+	chart1.width(width);
+	chart3.width(width);
+});

@@ -1,0 +1,19 @@
+/* Put all of the css styles for you bar chart here. I've already added in a few tiny tweaks to the optional legend  */
+
+body, h1, h2, h3, h4 {
+	font-family: "Open Sans";
+}
+
+/* Bar Charts */
+
+.bar-wrapper .chart-legend {
+	display: inline-block;	
+	vertical-align: top;
+}
+
+.bar-wrapper .chart-legend .legend-label {
+	text-align: right;	
+	padding-right: 10px !important;
+}
+
+/* End of Bar Charts */
