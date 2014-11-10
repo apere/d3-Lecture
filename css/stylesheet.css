@@ -1,0 +1,93 @@
+body, h1, h2, h3, h4 {
+	font-family: "Open Sans";
+}
+
+/* Bubble Timeline */
+.bubble-container {
+	max-width: 75%;	
+}
+
+.bubble-container ul.legend {
+	display: none;	
+}
+
+.bubble-container .point {
+	stroke-width: 0px;
+	stroke-opacity: .8;
+	fill: #eb4545;
+	stroke: #eb4545;	
+}
+
+.bubble-container .time-axes {
+	font-family: "Open Sans";
+	font-size: 12px;
+	font-weight: 100;
+	fill: #919191;	
+}
+
+.bubble-container .time-buttons button, .bubble-container .risk-buttons button {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	background-color: #f9f9f9;
+	border: 1px solid #919191;
+}
+
+.bubble-container .time-buttons, .bubble-container .risk-buttons {
+	display: inline-block;	
+}
+
+.bubble-container .risk-buttons {
+	margin-left: calc(100% - 420px);	
+}
+
+@media (max-width: 590px) {
+	.bubble-container .risk-buttons {
+		margin-left: 0px;
+		margin-top: 10px;
+	}	
+}
+
+
+.bubble-container .current-active-point {
+	stroke-width: 5px;
+	fill-opacity: 1;
+}
+
+.tooltip-block {
+	background-color: #ffffff;	
+	margin-top: 0px;
+	border: 1px solid #f9f9f9;	
+	min-width: 200px;
+}
+
+.tooltip-block .popover-title {
+	background-color: #f9f9f9;
+	margin: 0px;
+	padding: 10px;
+ 	font-size: 14px;
+}
+
+.tooltip-block .popover-content {
+	padding: 10px;	
+	font-size: 12px;	
+}
+
+/* End of Bubble Timeline */
+
+/* Bar Charts */
+
+.bar-wrapper .chart-legend {
+	display: inline-block;	
+	vertical-align: top;
+}
+
+.bar-wrapper .chart-legend .legend-label {
+	text-align: right;	
+	padding-right: 10px !important;
+}
+
+#bar-container-3 {
+	margin-left: 78px;	
+}
+
+/* End of Bar Charts */
