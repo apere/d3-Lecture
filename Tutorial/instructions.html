@@ -14,11 +14,15 @@
 <body>	
 	<h1>A Reusable D3 Chart - Workshop Instructions</h1>
 	<div class = "resources">
+		<h3>Resources</h3>
 		<ol>
 			<a href = "https://github.com/mbostock/d3/wiki/API-Reference"><h5>D3.js API Reference</h5></a>
 		</ol>
 		<ol>
 			<a href = "http://alignedleft.com/tutorials/d3"><h5>Free Digital O'Reilly Book</h5></a>
+		</ol>
+		<ol>
+			<a href = "http://adampere.com/d3"><h5>My D3 Site w/ Presentation Examples</h5></a>
 		</ol>
 	</div>
 	<div class = "instruction">
@@ -31,25 +35,25 @@
 				</p>
 			</li>
 			<li>
-				<h5>index.html</h5>
+				<h5><a href = "index.html">index.html</a></h5>
 				<p>
 					This is the html file where you will put an example of your reusable chart.<br> <em>Note: You do not have to edit... it will work as is)</em>
 				</p>
 			</li>
 			<li>
-				<h5>css/myFirstBarChart.css</h5>
+				<h5><a href = "css/myFirstBarChart.css">css/myFirstBarChart.css</a></h5>
 				<p>
 					This is the stylesheet that index.html uses. Feel free to edit it as much or as little as you would like.
 				</p>
 			</li>
 			<li>
-				<h5>js/myFirstBarChart-init.js</h5>
+				<h5><a href = "js/myFirstBarChart-init.js">js/myFirstBarChart-init.js</a></h5>
 				<p>
 					This javascript file will be used to initialize your chart and 'paste' it into <em>index.html</em>. Your chart should work with the code that is already in there but feel free to edit it to suite your needs.
 				</p>
 			</li>
 			<li>
-				<h5>js/myFirstBarChart.js</h5>
+				<h5><a href = "js/myFirstBarChart.js">js/myFirstBarChart.js</a></h5>
 				<p>
 					This is the javascript where you will do 95% of your work. It has been very wordily commented to help guide you into writing your first reusable d3 bar chart.
 				</p>
@@ -102,7 +106,7 @@
 		<p><em>Note: From here on out, I use the word point to refer to a bar. I did so to remind you that this same skeleton (+/- a bit of tweaking) can be used for different kinds of charts. It doesn't have to be a bar chart. </em></p>
 	</div>
 
-<h3>Breakdown of myFirstBarChart.js</h3>
+<h3>Breakdown of <a href = "js/myFirstBarChart.js">myFirstBarChart.js</a></h3>
 	<ol>
 		<li>
 			<h5>Parameters</h5>
@@ -135,10 +139,6 @@
 		<li>
 			<h5>events: enter</h5>
 			<p>This function is called when data is added to our data object. This is similar to the insert function but different. This function is called when a datum is appended to our data object. This function is called after the insert function. I usually put transitions to the final value after the initial load here.</p>
-		</li>
-		<li>
-			<h5>events: update</h5>
-			<p>This function is called when data is changed. This is where you would put the code that changes the elements bound to the recently updated data.</p>
 		</li>
 		<li>
 			<h5>events: exit</h5>

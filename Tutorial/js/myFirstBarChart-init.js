@@ -1,21 +1,40 @@
 
 // Example Rectangle.
-// If you're stuck with the reusable chart, try editing this so that it works with data (and multiple bars)
+// If you're stuck with the reusable chart, try editing this so that it works with data (and a variable amount of bars)
 
-var rectSVG = d3.select('#rectangle-target').append('svg').attr('width', 150).attr('height', 100).style('background-color', '#dcebe9');
+var rectSVG = d3.select('#rectangle-target').append('svg').attr('width', 150).attr('height', 200).style('background-color', '#dcebe9');
 
 var xscale = d3.scale.linear().domain([0, 50]).range([0, 150]);
+
+var rHeight = 50;
 
 var rect = rectSVG.append('g').append('rect')
 	.attr('x', 0)
 	.attr('y', 25)
-	.attr('height', 50)
-	.attr('width', function() {
-	return 0;})
+	.attr('height', rHeight)
+	.attr('width', function(d, i) {
+		return 0;
+	})
 	.attr('fill', '#e89795');
 
+// I'm using two variables because I don't want to give away how to do this with data. You should only need one.
+// (notice how this is ALMOST exactly the same as the other rect variable).
+var rect2 = rectSVG.append('g').append('rect') 
+	.attr('x', 0)
+	.attr('y', rHeight * 2)
+	.attr('height', rHeight)
+	.attr('width', function(d, i) {
+		return 0;
+	})
+	.attr('fill', '	#8ccfe8');
+
 rect.transition().duration(1000).attr('width', function() {
-	return xscale(30);})
+	return xscale(30);
+});
+
+rect2.transition().duration(1000).attr('width', function() {
+	return xscale(40);
+});
 
 
 // END of example rectangle
@@ -60,6 +79,8 @@ var margin = {
     'left': 10,
     'bottom': 20
 };
+
+// Uncomment below to test out your code
 
 //// Suggested code for initializing your chart. Feel free to tweak the parameters to your liking.
 //var myFirstBarChart = d3.select("#myFirstBarChart-container").append("svg").attr('class', 'bar-chart')
