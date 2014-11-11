@@ -5,6 +5,7 @@ Date: Tuesday, November 11th 2014
 This file is an empty skeleton for a reusable Bar Graph.
 
 The bar graph should allow the user to bind data in the form:
+
 	myData = [
 			{
 				"name"  : "Turkey Leg",
@@ -136,15 +137,6 @@ d3.chart('CustomBarChart', {
 					//Return the output of your transitions/property setting here... not a string
                     return ""; 
                 },
-				
-				// This function is called when data is changed. This is where you would put the code that changes
-				// the elements bound to the recently updated data.
-				// What kind of transitions do we want here?
-				'update' : function() {
-					
-					// Return the output of your transitions/property setting here... not a string
-					return "" ; 
-				},
 				
 				// This function is called when some data is removed. This is where you would put the code
 				// that handles the removal of elements associated with that data.

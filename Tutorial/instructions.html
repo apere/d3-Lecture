@@ -1,0 +1,141 @@
+<html lang="en">
+
+<head>
+	<!-- Libraries -->
+	<script src="libs/jquery-2.1.1.js" type="text/javascript"></script>
+	<script src="libs/d3.min.js" type="text/javascript"></script>
+	<script src="libs/d3.chart.min.js" type="text/javascript"></script>
+	<!-- Custom JS -->
+	<script src="js/myFirstBarChart.js" type="text/javascript"></script> <!-- Bubble Timeline -->
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="css/myFirstBarChart.css">
+</head>
+
+<body>	
+	<h1>A Reusable D3 Chart - Workshop Instructions</h1>
+	<div class = "instruction">
+		<h3>Files</h3>	
+		<ol>
+			<li>
+				<h5>index.html</h5>
+				<p>
+					This is the html file where you will put an example of your reusable chart.<br> <em>Note: You do not have to edit... it will work as is)</em>
+				</p>
+			</li>
+			<li>
+				<h5>css/myFirstBarChart.css</h5>
+				<p>
+					This is the stylesheet that index.html uses. Feel free to edit it as much or as little as you would like.
+				</p>
+			</li>
+			<li>
+				<h5>js/myFirstBarChart-init.js</h5>
+				<p>
+					This javascript file will be used to initialize your chart and 'paste' it into <em>index.html</em>. Your chart should work with the code that is already in there but feel free to edit it to suite your needs.
+				</p>
+			</li>
+			<li>
+				<h5>js/myFirstBarChart.js</h5>
+				<p>
+					This is the javascript where you will do 95% of your work. It has been very wordily commented to help guide you into writing your first reusable d3 bar chart.
+				</p>
+			</li>
+			<li>
+				<h5>Libs/...</h5>
+				<p>This directory has all of the libraries that you may need. <em>index.html</em> already references these files, so you do not need to do that.</p>
+			</li>
+		</ol>
+		<h3>What are we making?</h3>
+		<p>A super simple bar chart. It should look something like this:</p>
+		<div class = "center"><img src = "imgs/bar-example.png" ></div>
+		<p>
+			The bar graph should allow the user to bind data in the form:
+	
+		</p>
+		<div class = "center"><img src = "imgs/data-example.png" ></div>
+		<p>
+			Contstraints: make a bar chart.
+			<ol>
+				<li>The numerical values of our data will be represented by the length of lines (or rectangles) with equal heights (because our chart is sideways).</li>
+				<li>The length of the lines should be proportional to one another. Ideally, with the largest number taking up the maximum amount of space (but not necessary)</li>
+			</ol>
+		</p>
+		<p>
+			When initializing the chart, the user should be able to specify:
+			<ul>
+				<li>The width of the chart</li>
+				<li>The height of the chart</li>
+				<li>The ID of the DOM element that the chart will live inside of</li>
+				<li>The colors to be used (It's up to you if you want them to pass in an array of colors OR a single color (and differentiate bars by opacity) OR use classnames to let them change color with css)</li>
+				<li>The spacing between bars</li>
+				<li>A suggested Maximum (Helpful when you want to create muliple charts with the same scale for comparison)</li>
+			</ul>
+			
+			Optional Parameters
+			<ul>
+				<li>The chart's margins. I like to let them pass in a JSON object with all the margins (e.g. {'top' : 10, 'right' : 20, ...})</li>
+				<li>anything else you can think of</li>
+			</ul>
+		</p>
+		<p>
+			Extra credit (is that even a thing?)
+			<ul>
+				<li>It's up to you if the bars are ordered by value (You can use d3's sort function to sort the data).</li>
+				<li>The legend is optional. I suggest trying to make the bars and adding the legend in afterwards if you have more time. In cases like this, I will usually use straight up html/css for the legends instead of writing the text to svg. I do this because I don't feel like having to calculate the length/word wrapping for extra long labels in js. It's much easier being able to throw the categories into a table (or other html element) using js and then styling it with css.</li>
+			</ul>
+		</p>
+		
+		<p><em>Note: From here on out, I use the word point to refer to a bar. I did so to remind you that this same skeleton (+/- a bit of tweaking) can be used for different kinds of charts. It doesn't have to be a bar chart. </em></p>
+	</div>
+
+<h3>Breakdown of myFirstBarChart.js</h3>
+	<ol>
+		<li>
+			<h5>Parameters</h5>
+			<p>This is where you put the code that allows the user to set various options on initialization.</p>
+		</li>
+		<li>
+			<h5>Instance Variables</h5>
+			<p>This is where you initialize any variables that are necessary for the chart but the user does not have to specigy</p>
+		</li>
+		<li>
+			<h5>dataBind:</h5>
+			<p>This function will be called when you bind data to your chart. You may want to do a bit of data analysis (e.g. Do I need the max/min numbers? If I do, what do I do with them?</p>
+		</li>
+		<li>
+			<h5>insert:</h5>
+			<p> This function is called every time a new peice of data is added to our data object. Some things you may want to think about: 
+			<ul>
+				<li>adding DOM elements</li>
+				<li>What properties do we want to set for each element? (hint: size, location, color, ... </li>
+				<li>
+					If we have some kind of legend, do we need to add anything to that?
+				</li>
+			</ul>
+		</p>
+		</li>
+		<li>
+			<h5>events: enter</h5>
+			<p>This function is called when data is added to our data object. This is similar to the insert function but different. This function is called when a datum is appended to our data object. This function is called after the insert function. I usually put transitions to the final value after the initial load here.</p>
+		</li>
+		<li>
+			<h5>events: update</h5>
+			<p>This function is called when data is changed. This is where you would put the code that changes the elements bound to the recently updated data.</p>
+		</li>
+		<li>
+			<h5>events: exit</h5>
+			<p>This function is called when some data is removed. This is where you would put the code that handles the removal of elements associated with that data.</p>
+		</li>
+		<li>
+			<h5>Other Functions</h5>
+			<p>From here on, everything is a function that either we (inside of the chart) or the user can use.That includes getters & setters, functions to update data, etc. I've already filled out width(newWidth) function for you.</p>
+		</li>
+	</ol>
+</body>
+
+
+<footer>
+	<script src="js/myFirstBarChart-init.js" type="text/javascript"></script>
+</footer>
+
+</html>
