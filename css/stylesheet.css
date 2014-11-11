@@ -110,3 +110,48 @@ a:hover {
 }
 
 /* End of Bar Charts */
+
+/* Blank Page */
+
+#blank .nav {
+	list-style: none;	
+}
+
+#blank .nav li {
+	display: inline-block;
+	padding: 10px;
+	background-color: white;
+	transition: 300ms ease-in-out;
+}
+
+#blank .nav li:hover {
+	background-color: #fdfbfb;
+}
+
+#blank .code, #blank .target {
+	display: inline-block;	
+	padding: 10px;
+}
+
+
+#blank .code {
+	width: 375px;
+	background-color: #f9f9f9;
+	margin-left: 50px;
+	min-height: 400px;
+	margin-right: 50px;
+	vertical-align: top;
+	font-family: courier;
+	overflow-wrap: break-word;
+	padding-bottom: 20px;
+}
+
+#blank .target {
+	min-width: 600px;	
+	min-height: 625px;
+	background-color: #f9f9f9;
+	font-family: 'Open Sans';
+	margin-left: 50px;
+}
+
+/* END of Blank Page */
