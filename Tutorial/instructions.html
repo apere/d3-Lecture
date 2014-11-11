@@ -17,7 +17,7 @@
 		<h3>Files</h3>	
 		<ol>
 			<li>
-				<h5><a href = "../Tutorial.zip">Tutorial.zip</a></h5>
+				<h5><a href = "http//adampere.com/d3/Tutorial.zip">Tutorial.zip</a></h5>
 				<p>
 					The compressed zip file that contains all of the below files (including a version of this one).
 				</p>
@@ -102,7 +102,11 @@
 		</li>
 		<li>
 			<h5>Instance Variables</h5>
-			<p>This is where you initialize any variables that are necessary for the chart but the user does not have to specigy</p>
+			<p>This is where you initialize any variables that are necessary for the chart but the user does not have to specigf</p>
+			<p>
+				Note: You will probably want to take use of the d3 function <a href = "https://github.com/mbostock/d3/wiki/Quantitative-Scales#linear-scales">d3.scale</a>.<br><br>
+				example: <span class = "code">myXSCale = d3.scale.linear().domain([0, maximumNumberToPlot]).range([0, width]);</span><br><br> <span class = "code">.doman([...])</span> sets the range of numbers that you will you want translated and <span class = "code">.range([...])</span> sets the range of numbers that you want outputed.<br><br> Now that we have our scale set up, we can call it like any other function e.g. <span class = "code"> myXSCale(10)</span> and that will return the appropriate number within the range.;
+			</p>
 		</li>
 		<li>
 			<h5>dataBind:</h5>
